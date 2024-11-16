@@ -1,0 +1,8 @@
+{
+  "type": "model-java",
+  "require": {
+    "typehub/typeschema": {
+      "target": "./src/main/java/org/typeschema/model"
+    }
+  }
+}
