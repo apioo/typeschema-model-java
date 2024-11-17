@@ -1,3 +1,4 @@
+package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 

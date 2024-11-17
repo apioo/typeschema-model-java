@@ -2,7 +2,8 @@
   "type": "model-java",
   "require": {
     "typehub/typeschema": {
-      "target": "./src/main/java/org/typeschema/model"
+      "target": "./src/main/java/org/typeschema/model",
+      "namespace": "org.typeschema.model"
     }
   }
 }
