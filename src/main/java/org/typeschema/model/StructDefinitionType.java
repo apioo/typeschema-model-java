@@ -3,7 +3,7 @@ package org.typeschema.model;
 import com.fasterxml.jackson.annotation.*;
 
 /**
- * A struct represents a class/structure with a fix set of defined properties.
+ * A struct represents a class/structure with a fix set of defined properties
  */
 public class StructDefinitionType extends DefinitionType {
     private Boolean base;
