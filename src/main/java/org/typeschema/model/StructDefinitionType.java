@@ -14,6 +14,7 @@ public class StructDefinitionType extends DefinitionType {
     private ReferencePropertyType parent;
     @JsonPropertyDescription("Contains a map of available properties for this struct")
     private java.util.Map<String, PropertyType> properties;
+    private String type = "struct";
 
     @JsonSetter("base")
     public void setBase(Boolean base) {
@@ -63,6 +64,16 @@ public class StructDefinitionType extends DefinitionType {
     @JsonGetter("properties")
     public java.util.Map<String, PropertyType> getProperties() {
         return this.properties;
+    }
+
+    @JsonSetter("type")
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @JsonGetter("type")
+    public String getType() {
+        return this.type;
     }
 }
 
