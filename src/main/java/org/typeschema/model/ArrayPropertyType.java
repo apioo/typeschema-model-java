@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents an array which contains a dynamic list of values of the same type")
+@JsonClassDescription("A property containing a list of items of a consistent type.")
 public class ArrayPropertyType extends CollectionPropertyType {
     private String type = "array";
 

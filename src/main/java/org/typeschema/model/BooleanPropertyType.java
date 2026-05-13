@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a boolean value")
+@JsonClassDescription("Represents a true or false value.")
 public class BooleanPropertyType extends ScalarPropertyType {
     private String type = "boolean";
 

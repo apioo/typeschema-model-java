@@ -2,11 +2,11 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a string value")
+@JsonClassDescription("Represents a sequence of characters, optionally following a specific format.")
 public class StringPropertyType extends ScalarPropertyType {
-    @JsonPropertyDescription("Optional a default value for this property")
+    @JsonPropertyDescription("The value to be used if the property is not explicitly provided.")
     private String _default;
-    @JsonPropertyDescription("Optional describes the format of the string. Supported are the following types: date, date-time and time. A code generator may use a fitting data type to represent such a format, if not supported it should fallback to a string")
+    @JsonPropertyDescription("Provides specialized context for the string (e.g., 'date-time').")
     private String format;
     private String type = "string";
 

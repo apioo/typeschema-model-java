@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a map which contains a dynamic set of key value entries of the same type")
+@JsonClassDescription("An object with a dynamic set of keys where every value conforms to the same schema.")
 public class MapDefinitionType extends CollectionDefinitionType {
     private String type = "map";
 

@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a float value")
+@JsonClassDescription("Represents a floating-point or decimal number.")
 public class NumberPropertyType extends ScalarPropertyType {
     private String type = "number";
 

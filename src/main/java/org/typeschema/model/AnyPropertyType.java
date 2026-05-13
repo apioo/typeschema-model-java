@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents an any value which allows any kind of value")
+@JsonClassDescription("A wildcard property that accepts any valid JSON value (object, array, string, etc.).")
 public class AnyPropertyType extends PropertyType {
     private String type = "any";
 

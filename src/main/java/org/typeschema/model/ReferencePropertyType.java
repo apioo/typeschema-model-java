@@ -2,11 +2,11 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a reference to a definition type")
+@JsonClassDescription("A reference to a defined type in the global 'definitions' map.")
 public class ReferencePropertyType extends PropertyType {
-    @JsonPropertyDescription("The target type, this must be a key which is available at the definitions map")
+    @JsonPropertyDescription("The name of the definition this property points to.")
     private String target;
-    @JsonPropertyDescription("A map where the key is the name of the generic and the value must point to a key under the definitions keyword. This can be used in case the target points to a type which contains generics, then it is possible to replace those generics with a concrete type")
+    @JsonPropertyDescription("Maps generic names in the target type to concrete definition names.")
     private java.util.Map<String, String> template;
     private String type = "reference";
 

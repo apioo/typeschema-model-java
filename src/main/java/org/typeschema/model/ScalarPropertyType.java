@@ -9,8 +9,9 @@ import com.fasterxml.jackson.annotation.*;
     @JsonSubTypes.Type(value = NumberPropertyType.class, name = "number"),
     @JsonSubTypes.Type(value = StringPropertyType.class, name = "string"),
 })
-@JsonClassDescription("Base scalar property type")
+@JsonClassDescription("Abstract base for simple value types like strings, numbers, and booleans.")
 public abstract class ScalarPropertyType extends PropertyType {
+    @JsonPropertyDescription("The specific scalar type name.")
     private String type;
 
     @JsonSetter("type")

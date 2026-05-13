@@ -8,10 +8,13 @@ import com.fasterxml.jackson.annotation.*;
     @JsonSubTypes.Type(value = MapDefinitionType.class, name = "map"),
     @JsonSubTypes.Type(value = StructDefinitionType.class, name = "struct"),
 })
-@JsonClassDescription("Base definition type")
+@JsonClassDescription("The base abstract type for all schema definitions. It provides metadata common to all types such as descriptions and deprecation status.")
 public abstract class DefinitionType {
+    @JsonPropertyDescription("Indicates if this type is legacy and should no longer be used in new implementations.")
     private Boolean deprecated;
+    @JsonPropertyDescription("A brief explanation of the purpose and usage of this type.")
     private String description;
+    @JsonPropertyDescription("The discriminator value used to identify the specific definition subclass.")
     private String type;
 
     @JsonSetter("deprecated")

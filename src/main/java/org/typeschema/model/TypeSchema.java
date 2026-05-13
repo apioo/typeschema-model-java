@@ -2,12 +2,13 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("TypeSchema specification")
+@JsonClassDescription("The root object of a TypeSchema document containing imports, definitions, and the entry point.")
 public class TypeSchema {
+    @JsonPropertyDescription("A dictionary of all types available within this schema document.")
     private java.util.Map<String, DefinitionType> definitions;
-    @JsonPropertyDescription("Allows to import other TypeSchema documents. It contains a map where the key is the namespace and the value points to a remote document. The value is a URL and a code generator should support at least the following schemes: file, http, https")
+    @JsonPropertyDescription("External TypeSchema documents to include, keyed by an alias namespace.")
     private java.util.Map<String, String> _import;
-    @JsonPropertyDescription("Specifies the root type of your specification, this must be a key which is available at the definitions map")
+    @JsonPropertyDescription("The main entry-point definition for the schema.")
     private String root;
 
     @JsonSetter("definitions")

@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents an integer value")
+@JsonClassDescription("Represents a whole number.")
 public class IntegerPropertyType extends ScalarPropertyType {
     private String type = "integer";
 

@@ -14,11 +14,15 @@ import com.fasterxml.jackson.annotation.*;
     @JsonSubTypes.Type(value = ReferencePropertyType.class, name = "reference"),
     @JsonSubTypes.Type(value = StringPropertyType.class, name = "string"),
 })
-@JsonClassDescription("Base property type")
+@JsonClassDescription("The base abstract type for all property definitions within a struct or collection.")
 public abstract class PropertyType {
+    @JsonPropertyDescription("Flags the property as obsolete.")
     private Boolean deprecated;
+    @JsonPropertyDescription("Documentation for the specific property.")
     private String description;
+    @JsonPropertyDescription("Indicates whether the value can be null.")
     private Boolean nullable;
+    @JsonPropertyDescription("The discriminator value used to identify the specific property subclass.")
     private String type;
 
     @JsonSetter("deprecated")

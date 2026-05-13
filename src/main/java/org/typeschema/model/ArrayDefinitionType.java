@@ -2,7 +2,7 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents an array which contains a dynamic list of values of the same type")
+@JsonClassDescription("An ordered list of values where every item conforms to the same schema.")
 public class ArrayDefinitionType extends CollectionDefinitionType {
     private String type = "array";
 

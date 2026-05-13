@@ -2,9 +2,9 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("Represents a generic value which can be replaced with a concrete type")
+@JsonClassDescription("A placeholder for a type that will be specified at runtime or through template arguments.")
 public class GenericPropertyType extends PropertyType {
-    @JsonPropertyDescription("The name of the generic, it is recommended to use common generic names like T or TValue. These generics can then be replaced on usage with a concrete type through the template property at a reference")
+    @JsonPropertyDescription("The identifier for the generic (e.g., 'T'). This is matched against template keys in a Reference.")
     private String name;
     private String type = "generic";
 

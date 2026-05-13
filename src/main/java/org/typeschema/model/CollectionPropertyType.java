@@ -7,9 +7,11 @@ import com.fasterxml.jackson.annotation.*;
     @JsonSubTypes.Type(value = ArrayPropertyType.class, name = "array"),
     @JsonSubTypes.Type(value = MapPropertyType.class, name = "map"),
 })
-@JsonClassDescription("Base collection property type")
+@JsonClassDescription("Abstract base for properties that reference inline maps or arrays.")
 public abstract class CollectionPropertyType extends PropertyType {
+    @JsonPropertyDescription("The schema definition for the items contained in this property's collection.")
     private PropertyType schema;
+    @JsonPropertyDescription("The collection type identifier.")
     private String type;
 
     @JsonSetter("schema")
