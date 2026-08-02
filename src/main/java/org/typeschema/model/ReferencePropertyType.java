@@ -2,40 +2,40 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("A reference to a defined type in the global 'definitions' map.")
+@JsonClassDescription("Represents a reference to a type defined in the global definitions dictionary.")
 public class ReferencePropertyType extends PropertyType {
-    @JsonPropertyDescription("The name of the definition this property points to.")
+    @JsonPropertyDescription("The key of the target definition in the definitions map.")
+    @JsonProperty("target")
     private String target;
-    @JsonPropertyDescription("Maps generic names in the target type to concrete definition names.")
+
+    @JsonPropertyDescription("Binds generic parameter names in the target definition to concrete definition names.")
+    @JsonProperty("template")
     private java.util.Map<String, String> template;
+
+    @JsonProperty("type")
     private String type = "reference";
 
-    @JsonSetter("target")
+
     public void setTarget(String target) {
         this.target = target;
     }
 
-    @JsonGetter("target")
     public String getTarget() {
         return this.target;
     }
 
-    @JsonSetter("template")
     public void setTemplate(java.util.Map<String, String> template) {
         this.template = template;
     }
 
-    @JsonGetter("template")
     public java.util.Map<String, String> getTemplate() {
         return this.template;
     }
 
-    @JsonSetter("type")
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonGetter("type")
     public String getType() {
         return this.type;
     }

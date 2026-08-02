@@ -14,53 +14,53 @@ import com.fasterxml.jackson.annotation.*;
     @JsonSubTypes.Type(value = ReferencePropertyType.class, name = "reference"),
     @JsonSubTypes.Type(value = StringPropertyType.class, name = "string"),
 })
-@JsonClassDescription("The base abstract type for all property definitions within a struct or collection.")
+@JsonClassDescription("The abstract base type for all property definitions within a struct or collection.")
 public abstract class PropertyType {
-    @JsonPropertyDescription("Flags the property as obsolete.")
+    @JsonPropertyDescription("Indicates whether this property is deprecated and should no longer be used.")
+    @JsonProperty("deprecated")
     private Boolean deprecated;
-    @JsonPropertyDescription("Documentation for the specific property.")
+
+    @JsonPropertyDescription("Documentation explaining the purpose and usage of this property.")
+    @JsonProperty("description")
     private String description;
-    @JsonPropertyDescription("Indicates whether the value can be null.")
+
+    @JsonPropertyDescription("Indicates whether this property accepts a null value.")
+    @JsonProperty("nullable")
     private Boolean nullable;
-    @JsonPropertyDescription("The discriminator value used to identify the specific property subclass.")
+
+    @JsonPropertyDescription("The discriminator value used to identify the specific property type.")
+    @JsonProperty("type")
     private String type;
 
-    @JsonSetter("deprecated")
+
     public void setDeprecated(Boolean deprecated) {
         this.deprecated = deprecated;
     }
 
-    @JsonGetter("deprecated")
     public Boolean getDeprecated() {
         return this.deprecated;
     }
 
-    @JsonSetter("description")
     public void setDescription(String description) {
         this.description = description;
     }
 
-    @JsonGetter("description")
     public String getDescription() {
         return this.description;
     }
 
-    @JsonSetter("nullable")
     public void setNullable(Boolean nullable) {
         this.nullable = nullable;
     }
 
-    @JsonGetter("nullable")
     public Boolean getNullable() {
         return this.nullable;
     }
 
-    @JsonSetter("type")
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonGetter("type")
     public String getType() {
         return this.type;
     }

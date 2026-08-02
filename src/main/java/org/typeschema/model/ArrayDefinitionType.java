@@ -2,16 +2,16 @@ package org.typeschema.model;
 
 import com.fasterxml.jackson.annotation.*;
 
-@JsonClassDescription("An ordered list of values where every item conforms to the same schema.")
+@JsonClassDescription("Represents an ordered list of elements where every item conforms to the same schema.")
 public class ArrayDefinitionType extends CollectionDefinitionType {
+    @JsonProperty("type")
     private String type = "array";
 
-    @JsonSetter("type")
+
     public void setType(String type) {
         this.type = type;
     }
 
-    @JsonGetter("type")
     public String getType() {
         return this.type;
     }
